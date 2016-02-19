@@ -1,0 +1,7 @@
+//create zoo table:
+CREATE TABLE zoo (
+id SERIAL PRIMARY KEY NOT NULL,
+animal_type varchar(100),
+type_total INTEGER
+)
+
