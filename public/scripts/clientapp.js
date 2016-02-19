@@ -14,11 +14,10 @@ function addAnimal() {
 
     $.ajax({
         type: 'POST',
-        url: '/animal',
+        url: '/ajaxmods',
         data: results,
         success: function(data) {
             if(data) {
-                //console.log('from server:', data);
                 getAnimals();
             } else {
                 console.log('error');
@@ -31,9 +30,8 @@ function addAnimal() {
 function getAnimals() {
     $.ajax({
         type: 'GET',
-        url: '/animal',
+        url: '/ajaxmods',
         success: function (data) {
-            //console.log(data);
             appendAnimal(data);
         }
     });
