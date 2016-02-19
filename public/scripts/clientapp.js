@@ -47,8 +47,8 @@ function appendAnimal(data) {
 
         var $el = $('.animal_list').children().last();
 
-        $el.append('\n' + '<p>Animal Id: </p>' + animal.id + ' ');
-        $el.append('<p>Animal Type: </p>' + animal.animal_type + ' ');
-        $el.append('<p>Totoal number of ' + animal.animal_type + 's' + '</p>' + animal.type_total);
+        $el.append('<p>Animal Id: ' + animal.id + ' </p>');
+        $el.append('<p>Animal Type: ' + animal.animal_type + '</p>');
+        $el.append('<p>Totoal number of ' + animal.animal_type + 's:' + " " + animal.type_total + '</p>');
     });
 }
