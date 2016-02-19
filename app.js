@@ -3,7 +3,7 @@ var app = express();
 var path = require('path');
 var bodyParser = require('body-parser');
 var pg = require('pg');
-//var post_animal = require('./routes/post_animal');
+var random = require('./routes/random');
 
 var connectionString = '';
 if(process.env.DATABASE_URL != undefined) {
@@ -36,15 +36,15 @@ app.get('/animal', function(req, res) {
 });
 
 app.post('/animal', function(req, res) {
-    //var getRandomNum = function() {
-    //    return random(randomNumber(1, 100));
-    //}
+    var animal_numbers = random.randomNumber(1, 100);
+    console.log(animal_numbers);
+
     var addAnimal = {
         animal_type: req.body.animal_type
     };
     pg.connect(connectionString, function (err, client, done) {
-        client.query("INSERT INTO zoo (animal_type) VALUES ($1) RETURNING id",
-            [addAnimal.animal_type],
+        client.query("INSERT INTO zoo (animal_type, type_total) VALUES ($1, $2) RETURNING id",
+            [addAnimal.animal_type, animal_numbers],
             function (err, result) {
                 done();
 

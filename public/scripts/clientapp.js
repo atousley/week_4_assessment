@@ -40,12 +40,15 @@ function getAnimals() {
 }
 
 function appendAnimal(data) {
+    $('.animal_list').children().remove();
+
     data.forEach(function(animal) {
-        $('.animal_list').append('<p></p>');
+        $('.animal_list').append('<div class="animals"></div>');
 
         var $el = $('.animal_list').children().last();
 
-        $el.append(animal.id + ': ');
-        $el.append(animal.animal_type + ' ');
+        $el.append('\n' + '<p>Animal Id: </p>' + animal.id + ' ');
+        $el.append('<p>Animal Type: </p>' + animal.animal_type + ' ');
+        $el.append('<p>Totoal number of ' + animal.animal_type + 's' + '</p>' + animal.type_total);
     });
 }

@@ -1,0 +1,18 @@
+body {
+    font-family: sans-serif;
+}
+
+#animal_form {
+    padding: 15px;
+    margin: 10px;
+    background-color: lightgoldenrodyellow;
+    border: 1px solid #000000;
+}
+
+/*.animals {*/
+    /*display: block;*/
+/*}*/
+
+/*.animals, p {*/
+    /*display: inline-block;*/
+/*}*/
